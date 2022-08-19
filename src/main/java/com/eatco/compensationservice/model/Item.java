@@ -11,6 +11,8 @@ import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;
 
+import com.eatco.compensationservice.config.jpa.ItemNbrGenerator;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -29,7 +31,7 @@ public class Item extends AuditEntity{
     @GeneratedValue(generator = "item_seq")
     @GenericGenerator(
             name = "item_seq",
-            strategy = "com.eatco2.compensationservice.config.jpa.ItemNbrGenerator",
+            strategy = "com.eatco.compensationservice.config.jpa.ItemNbrGenerator",
             parameters = {
                     @Parameter(name = ItemNbrGenerator.INCREMENT_PARAM, value = "50"),
                     @Parameter(name = ItemNbrGenerator.VALUE_PREFIX_PARAMETER, value = "ITEM_"),

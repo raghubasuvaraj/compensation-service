@@ -13,7 +13,7 @@ import com.eatco.compensationservice.util.PaginationResult;
 public interface CompensationService {
   //  void addCompensation(List<CompensationDetailDto>  compensationDto);
 
-    PaginationResult<CompensationDashboardDto> fetchFilteredResults(Integer pageNo, Integer size, Date fromDate, Date toDate, String userId);
+   // PaginationResult<CompensationDashboardDto> fetchFilteredResults(Integer pageNo, Integer size, Date fromDate, Date toDate, String userId);
 
     CompensationDto updateCompensationDetails(CompensationDetailDto compensationDto, String compensationId) throws CustomValidationException;
 

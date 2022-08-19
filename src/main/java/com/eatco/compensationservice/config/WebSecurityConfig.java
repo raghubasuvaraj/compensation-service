@@ -17,13 +17,11 @@ import com.eatco.compensationservice.config.authentication.JwtAuthenticationEntr
 import com.eatco.compensationservice.config.authentication.JwtAuthenticationProvider;
 import com.eatco.compensationservice.config.authentication.JwtAuthenticationTokenFilter;
 
-@Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-  @Autowired
-  private JwtAuthenticationEntryPoint unauthorizedHandler;
+  
 
   @Autowired
   private JwtAuthenticationProvider jwtAuthenticationProvider;

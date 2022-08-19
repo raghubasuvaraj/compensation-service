@@ -1,4 +1,4 @@
-package com.eatco.compensationservice.model;
+package com.eatco.compensationservice.config.jpa;
 
 import java.io.Serializable;
 import java.util.Properties;
@@ -12,7 +12,7 @@ import org.hibernate.service.ServiceRegistry;
 import org.hibernate.type.LongType;
 import org.hibernate.type.Type;
 
-public class ItemNbrGenerator extends SequenceStyleGenerator {
+public class CompensationIdGenerator extends SequenceStyleGenerator {
 
     public static final String VALUE_PREFIX_PARAMETER = "CMP";
     public static final String VALUE_PREFIX_DEFAULT = "";

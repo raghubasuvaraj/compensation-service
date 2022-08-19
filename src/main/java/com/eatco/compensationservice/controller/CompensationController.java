@@ -39,15 +39,15 @@ public class CompensationController {
 //        return new ResponseEntity<>(HttpStatus.OK);
 //    }
 
-    @GetMapping(value = "list/get")
-    public ResponseEntity<PaginationResult<CompensationDashboardDto>> fetchCompensationList(
-            @RequestParam(name = "pageNo", defaultValue = "1", required = false) Integer pageNo,
-            @RequestParam(name = "size", required = false, defaultValue = "10") Integer size,
-            @RequestParam(name = "fromDate", required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") Date fromDate,
-            @RequestParam(name = "toDate", required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") Date toDate,
-            @RequestParam(name = "userId") String userId) {
-        return new ResponseEntity<>(compensationService.fetchFilteredResults(pageNo, size, fromDate, toDate, userId), HttpStatus.OK);
-    }
+//    @GetMapping(value = "list/get")
+//    public ResponseEntity<PaginationResult<CompensationDashboardDto>> fetchCompensationList(
+//            @RequestParam(name = "pageNo", defaultValue = "1", required = false) Integer pageNo,
+//            @RequestParam(name = "size", required = false, defaultValue = "10") Integer size,
+//            @RequestParam(name = "fromDate", required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") Date fromDate,
+//            @RequestParam(name = "toDate", required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") Date toDate,
+//            @RequestParam(name = "userId") String userId) {
+//        return new ResponseEntity<>(compensationService.fetchFilteredResults(pageNo, size, fromDate, toDate, userId), HttpStatus.OK);
+//    }
 
     @GetMapping(value = "get/{compensationId}")
     public ResponseEntity<CompensationDto> fetchByCompensationId(@RequestParam(name = "compensationId") String compensationId) throws CustomValidationException {

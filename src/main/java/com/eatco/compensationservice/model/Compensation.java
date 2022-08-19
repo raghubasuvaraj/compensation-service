@@ -16,6 +16,8 @@ import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;
 
+import com.eatco.compensationservice.config.jpa.CompensationIdGenerator;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -33,7 +35,7 @@ public class Compensation  extends AuditEntity{
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "compensation_seq")
     @GenericGenerator(
             name = "compensation_seq",
-            strategy = "com.eatco2.compensationservice.config.jpa.CompensationIdGenerator",
+            strategy = "com.eatco.compensationservice.config.jpa.CompensationIdGenerator",
             parameters = {
                     @Parameter(name = CompensationIdGenerator.INCREMENT_PARAM, value = "50"),
                     @Parameter(name = CompensationIdGenerator.VALUE_PREFIX_PARAMETER, value = "CMP_"),

@@ -1,18 +1,22 @@
-package com.eatco.compensationservice.model;
+package com.eatco.compensationservice.config.jpa;
 
-import java.io.Serializable;
-import java.util.Properties;
 
 import org.hibernate.HibernateException;
 import org.hibernate.MappingException;
 import org.hibernate.engine.spi.SharedSessionContractImplementor;
+import org.hibernate.id.Configurable;
+import org.hibernate.id.IdentifierGenerator;
 import org.hibernate.id.enhanced.SequenceStyleGenerator;
 import org.hibernate.internal.util.config.ConfigurationHelper;
 import org.hibernate.service.ServiceRegistry;
 import org.hibernate.type.LongType;
 import org.hibernate.type.Type;
 
-public class CompensationIdGenerator extends SequenceStyleGenerator {
+import java.io.Serializable;
+import java.util.Properties;
+import java.util.stream.Stream;
+
+public class ItemNbrGenerator extends SequenceStyleGenerator {
 
     public static final String VALUE_PREFIX_PARAMETER = "CMP";
     public static final String VALUE_PREFIX_DEFAULT = "";

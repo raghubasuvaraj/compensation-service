@@ -26,21 +26,21 @@ public class CompensationCustomRepoImpl implements CompensationCustomRepo {
 
     @Autowired
     private EntityManager entityManager;
-    @Override
-    public Page<Compensation> getCompensationByDate(Date fromDate, Date toDate, String userId,PageRequest pageRequest) {
-        CriteriaBuilder cb = entityManager.getCriteriaBuilder();
-        CriteriaQuery<Compensation> cQuery = cb.createQuery(Compensation.class);
-        Root<Compensation> root = cQuery.from(Compensation.class);
-        List<Predicate> predicates = getPredicates(fromDate, toDate, userId,cb, root);
-
-        cQuery.where(predicates.toArray(new Predicate[0]));
-        TypedQuery<Compensation> query = entityManager.createQuery(cQuery);
-        int total = query.getResultList().size();
-        query.setFirstResult(pageRequest.getPageNumber() * pageRequest.getPageSize());
-        query.setMaxResults(pageRequest.getPageSize());
-
-        return new PageImpl<>(query.getResultList(), pageRequest, total);
-    }
+//    @Override
+//    public Page<Compensation> getCompensationByDate(Date fromDate, Date toDate, String userId,PageRequest pageRequest) {
+//        CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+//        CriteriaQuery<Compensation> cQuery = cb.createQuery(Compensation.class);
+//        Root<Compensation> root = cQuery.from(Compensation.class);
+//        List<Predicate> predicates = getPredicates(fromDate, toDate, userId,cb, root);
+//
+//        cQuery.where(predicates.toArray(new Predicate[0]));
+//        TypedQuery<Compensation> query = entityManager.createQuery(cQuery);
+//        int total = query.getResultList().size();
+//        query.setFirstResult(pageRequest.getPageNumber() * pageRequest.getPageSize());
+//        query.setMaxResults(pageRequest.getPageSize());
+//
+//        return new PageImpl<>(query.getResultList(), pageRequest, total);
+//    }
 
     private List<Predicate> getPredicates(Date fromDate, Date toDate, String userId,CriteriaBuilder cb, Root<Compensation> root) {
         List<Predicate> pd = new ArrayList<>();

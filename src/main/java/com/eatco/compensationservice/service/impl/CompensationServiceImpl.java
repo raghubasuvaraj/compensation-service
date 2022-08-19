@@ -70,12 +70,12 @@ public class CompensationServiceImpl implements CompensationService {
 //        pdfService.generateInvoice(compensation);
 //    }
 
-    @Override
-    public PaginationResult<CompensationDashboardDto> fetchFilteredResults(Integer pageNo, Integer size, Date fromDate, Date toDate,String userId) {
-        PageRequest pageRequest =  PageRequest.of(pageNo-1, size);
-        Page<Compensation> result = compensationRepo.getCompensationByDate(fromDate, toDate, userId,pageRequest);
-        return convertDataToPaginationResult(result, pageRequest);
-    }
+//    @Override
+//    public PaginationResult<CompensationDashboardDto> fetchFilteredResults(Integer pageNo, Integer size, Date fromDate, Date toDate,String userId) {
+//        PageRequest pageRequest =  PageRequest.of(pageNo-1, size);
+//        Page<Compensation> result = compensationRepo.getCompensationByDate(fromDate, toDate, userId,pageRequest);
+//        return convertDataToPaginationResult(result, pageRequest);
+//    }
 
     private PaginationResult<CompensationDashboardDto> convertDataToPaginationResult(
             Page<Compensation> paginatedResult, Pageable pageRequest) {
